@@ -1,0 +1,99 @@
+body {
+  height: 100%;
+  background: #131313;
+}
+
+.container > div .card {
+  background: none;
+  border: 0px;
+}
+
+.container > div .card .card-body .text-center {
+  padding: 10% 0px 10px 0px;
+}
+
+.container > div .card .card-body .text-center h4 {
+  color: #9E9E9E;
+  margin: 10px 0px;
+}
+
+.container > div .card .card-body form input {
+  font-size: 15px;
+  border-color: #1E1E1E;
+  background: #2D2D2D;
+}
+
+.container > div .card .card-body form input:focus {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #242424;
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #242424;
+}
+
+.container .close-account {
+  position: absolute;
+  bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.container .close-account div {
+  cursor: pointer;
+  margin: 0px auto;
+  padding: 5px;
+}
+
+.container .close-account div a i {
+  font-size: 40px;
+}
+
+.container .close-account div:hover a {
+  text-decoration: none;
+}
+
+.container .close-account div:hover a i {
+  color: #DF4444;
+}
+
+.container .close-account div:hover a h4 {
+  color: #DF4444;
+}
+/*# sourceMappingURL=lock-screen.css.map */
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: transparent; 
+  margin: 30px auto 0 auto;
+  border: solid 2px #424242;
+  border-top: solid 2px #1c89ff;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+
+
+.loader.active {
+  animation: loading 2s linear infinite; 
+  animation-fill-mode: forwards;
+  opacity: 0.1;
+}
+
+
+@keyframes loading {
+  50% {
+    opacity:1; 
+  }
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(1080deg);
+    
+  }
+  
+}
+

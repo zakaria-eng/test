@@ -1,0 +1,373 @@
+@import "skins/dark.scss";
+
+::-webkit-scrollbar{
+    width: 10px;
+    border: 1px solid #1b1b1b;
+}
+::-webkit-scrollbar-track {
+    background: $b-h;
+}
+::-webkit-scrollbar-thumb {
+    background: $b-b; 
+    &:hover{
+        background: $b-0;
+    }
+
+}
+
+
+// Sass Function
+%active-sid-bar {
+    color: $out-1 !important;
+    border-left: 4px solid $out-1 !important;
+  }
+
+%active-tab{
+    color: $activ-f-a;
+    border-bottom: 1px solid $activ-f-a;
+}
+
+
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+li{
+    list-style: none;
+}
+
+body{
+    height: 100vh;
+    background: $b-e;
+}
+
+
+.loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+}
+
+
+.all{
+    padding: 0px;
+    .menu-bar{
+        height: 30px;
+        background: $b-b;
+    }
+    .b{
+        top: 30px;
+        left: 0;
+        z-index: 10;
+        position: fixed;
+        height: calc(100vh - 52px);
+        width: 65px;
+        background: $b-a;
+        .nav{
+            li{
+                height: 48px;
+                a{
+                    padding: 13px 18px;
+                    color: $f-a;
+                    border-left: 4px solid transparent;
+                    &:hover,&:focus{
+                        color: $out-1;
+                    }
+                    &.active{
+                        @extend %active-sid-bar;
+                    }
+                }
+            }
+        }
+        .nav-2{
+            position: absolute;
+            bottom: 0px;
+        }
+    }
+    .c{
+        height: 22px;
+        background: $b-g;
+        border-color: $border-1;
+        border-style: solid;
+        border: 1px 0px 1px 0px;
+        .state-bar-item{
+            >div{
+                
+                border-color: $border-1;
+                border-style: solid;
+                border-width: 0px 1px 0px 1px;
+                padding: 0px 15px;
+            }
+        }
+    }
+
+    .d{
+        top:30px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+        min-height: calc(100vh - 52px);
+        margin-left:65px;
+        background: $b-e;
+        .d-a{
+            background-color: $b-d;
+            border-bottom: 1px solid $border-2;
+            height: 48px;
+            position: fixed;
+            width: calc(100% - 65px);
+            z-index: 10;
+            nav{
+                position: absolute;
+                bottom: 0px;
+                a{
+                    font-size: 16px;
+                    color: $f-a;
+                    &:hover,&:focus{
+                        color: $activ-f-a;
+                    }
+                    &.active{
+                        @extend %active-tab;
+                    }
+                }
+                
+            }
+            .my-account{
+                min-width: 225px;
+                max-width: 300px;
+                background-color: $b-f;
+                border: 1px solid $border-2;
+                .navbar-nav{
+                    width:100%;
+                    .dropdown{
+                        .dropdown-toggle{
+                            padding: 6px 10px;
+                        }
+                        .dropdown-menu{
+                            background-color: $b-g;
+                        }
+                    }
+                }
+            }
+        }
+        .page-container{
+            width: 100%;
+            height: calc(100% - 48px);
+            top: 48px;
+            position: absolute;
+            background-color: $b-e;
+            .contact-continer{
+                position: absolute;
+                right: 0px;
+                
+                background-color: $b-f;
+                border-left:1px solid $border-2;
+                height: 100%;
+                .list-group{
+                    width: 75px;
+                    height: 100%;
+                    margin: 0px;
+                    overflow-y: scroll;
+                    overflow-x: hidden;
+                    li{
+                        cursor: pointer;
+                        width: 60px;
+                        background: none;
+                        border: 0px;
+                        padding: 9px 0px 9px 10px;
+                        span{
+                            width: auto;
+                        }
+                    }
+                }
+            }
+            .page{
+                height: 100%;
+                width: calc(100% - 75px);
+                .chat-content{
+                    padding-top: 30px;
+                    width: 30%;
+                    min-width: 320px;
+                    background-color: $b-d;
+                    >div{
+                        height: 100%;
+                        .nav{
+                            border-bottom: 1px solid $border-2;
+                            a{
+                                font-size: 16px;
+                                color: $f-a;
+                                text-align: center;
+                                &:hover,&:focus{
+                                    color: $activ-f-a;
+                                }
+                                &.active{
+                                    @extend %active-tab;
+                                }
+                            }
+                        }
+                        .tabs{
+                            height: calc(100% - 34px);
+                            .app-search{
+                                padding:20px;
+                                form{
+                                    div{
+                                        input{
+                                            background-color: $b-e;
+                                            border: 1px solid $border-2;
+                                            color: $f-a;
+                                            &:focus {
+                                                outline: 0;
+                                                box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 0, 0, 0.6);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .my-chat-contact{
+                                .col{
+                                    padding-right: 0px;
+                                }
+                                height: calc(100% - 74px);
+                                overflow: auto;
+                                padding-right: 15px;
+                                .text-body{
+                                    padding: 0px 15px;
+                                    display: block;
+                                    .media{
+                                        padding:10px;
+                                        .media-body{
+                                            padding-left: 5px;
+                                            h5{
+                                                color: $f-title;
+                                                font-size: 16px;
+                                                span{
+                                                    font-size: 14px;
+                                                }
+                                            }
+                                            p{
+                                                font-size: 14px;
+                                               /* .last-message{
+                                                    
+                                                } */
+                                                .badge{
+                                                    background-color: $b-f;
+                                                    color: $out-1;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    hr{
+                                        border-color: $border-2;
+                                        margin: 0px 30px;
+                                    }
+                                    &:hover{
+                                        background: $b-e;
+                                    }
+                                    &:focus, &.active{
+                                        background: $b-f;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    
+                    
+                    
+                }
+                .chat-room{
+                    .card-body{
+                        overflow: auto;
+                        height: calc(100% - 54px);
+                        .conversation-list{
+                            color: $f-a;
+                            li{
+                                
+                                .message-text{
+                                    .ctext-wrap {
+                                        border-radius: 3px;
+                                        display: inline-block;
+                                        padding: 12px;
+                                        position: relative;
+                                        
+                                    }
+                                }
+                            }
+                            .sender{
+                                .message-text{
+                                    .ctext-wrap {
+                                        background: $b-f;
+                                        &:after {
+                                            right: 99%;
+                                            top: 0;
+                                            border: solid transparent;
+                                            content: " ";
+                                            height: 0;
+                                            width: 0;
+                                            position: absolute;
+                                            pointer-events: none;
+                                            border-top-color: $b-f;
+                                            border-width: 6px;
+                                            margin-right: -1px;
+                                            border-right-color: $b-f;
+                                        }
+                                    }
+                                }
+                            }
+                            .receiver{
+                                text-align: right;
+                                .message-text{
+                                    .ctext-wrap {
+                                        background: $b-a;
+                                        
+                                        &:after {
+                                            left: 99%;
+                                            top: 0;
+                                            border: solid transparent;
+                                            content: " ";
+                                            height: 0;
+                                            width: 0;
+                                            position: absolute;
+                                            pointer-events: none;
+                                            border-top-color: $b-a;
+                                            border-width: 6px;
+                                            margin-left: -1px;
+                                            border-left-color: $b-a;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                    .message-input{
+                        .col{
+                            > div{
+                                background: $b-g;
+                                form{
+                                    .d-flex{
+                                        .flex-fill{
+                                            padding: 0px 15px;
+                                            input{
+                                                background: $b-e;
+                                            }
+                                        }
+                                        .col-sm-auto{
+                                            width: 200px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
